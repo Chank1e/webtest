@@ -1,0 +1,209 @@
+<html>
+<head>
+<title>DashBoard</title>
+<style type="text/css">
+	body {
+  background:radial-gradient(circle,#1A699E,#2E84BD);
+}
+.block {
+  cursor:pointer;
+  display:inline-block;
+}
+#dboard{
+  position:relative;
+	transition:all 0.4s;
+  width:1012px;
+  height:100%;
+  margin:0 auto;
+}
+#closeBut {
+  cursor:pointer;
+  position:absolute;
+  right:0px;
+  top:0px;
+  width:25px;
+  height:25px;
+  background:#F65151;
+}
+#closeBut:hover h2{
+  animation:closeBut 0.5s;
+}
+.fullDesc{
+  font-size:14pt;
+  margin:5px;
+}
+@keyframes closeBut{
+  from{transform:rotate(45deg);}
+  to{transform:rotate(405deg);}
+}
+#closeBut h2 {
+  transform:rotate(45deg);
+  color:white;
+}
+.block.mid{
+  width:250px;
+  height:150px;
+}
+.block.mid .slide {
+  height:150px;
+  width:250px;
+  transition:transform 0.4s;
+  transform:translateY(102px);
+}
+.block .slide h1,h2 {
+  vertical-align:middle;
+  margin:0;
+      text-align:center;
+  color:white;
+}
+.block.mid .slide h1{
+  font-size:18pt;
+}
+.slide h1{
+  padding:5px;
+  font-family: 'Verdana';
+}
+.block.mid .slide h2.shortDesc{
+  font-size:12pt;
+}
+.slide h2{
+  font-family: 'Indie Flower', cursive;
+}
+.block {
+  overflow:hidden;
+}
+.block.big {
+  width:504px;
+  height:304px;
+}
+.block.big .slide {
+	height:304px;
+  width:504px;
+	transition:transform 0.4s;
+  transform:translateY(246px);
+}
+.block.big.notActive:hover .slide {
+	transform:translateY(100px);
+}
+.block.mid.notActive:hover .slide {
+  transform:translateY(30px);
+}
+.block.mid:nth-child(1){
+ background:url('http://file.mobilmusic.ru/14/d9/1c/697645.jpg');
+  background-size:cover;
+}
+.block.mid:nth-child(2){
+ background:url('http://img15.nnm.me/c/3/f/9/4/ed915ab0891a6ec4b85003c0603.jpg');
+  background-size:cover;
+}
+.block.mid:nth-child(3){
+ background:url('http://wallpaperscraft.ru/image/abstraktsiya_svet_neon_blesk_97687_1920x1080.jpg');
+  background-size:cover;
+}
+.block.mid:nth-child(4){
+ background:url('http://www.anywalls.com/large/201304/63615.jpg');
+  background-size:cover;
+}
+.block.big:nth-child(5){
+ background:url('http://www.hdwallpapers.in/walls/wet_drops_blue_rose-wide.jpg');
+  background-size:cover;
+}
+.block.big:nth-child(6){
+	background:url('http://ursamart.com/images/fd8/dark-blue-texture-ideas-2.jpg');
+  background-size:cover;
+}
+.block:hover .slide {
+  transition:transform 0.4s;
+}
+/*.block.mid:nth-child(2) .slide {
+  background:pink;
+}
+.block.mid:nth-child(1) .slide {
+  background:purple;
+}*/
+</style>
+<script src="jquery.min.js">
+</script>
+</head>
+<body>
+<script>$( document ).ready(function() {
+    
+$("#closeBut").hide();
+$(".block").addClass("notActive");
+$(".fullDesc").hide();
+/*$(".block.mid.notActive").hover(function(){$(this).find(".slide").css("transform","translateY(30px)");},function(){$(this).find(".slide").css("transform","translateY(150px)");});
+$(".block.big.notActive").hover(function(){$(this).find(".slide").css("transform","translateY(100px)");},function(){$(this).find(".slide").css("transform","translateY(304px)");});*/
+$(".block").click(function(){$(this).removeClass("notActive").addClass("active");$(".block").hide();$(this).fadeIn().css({"position":"absolute","width":"1012px","top":"0px","left":"0px","height":"569px"}).find("h1").css("font-size","40pt");$(this).find(".shortDesc").hide();$(this).find(".fullDesc").show();$("#closeBut").fadeIn();$(this).find(".slide").css("transform","translateY(500px)").delay(500).css({"width":"1012px","transform":"translateY(0px)"});});
+$("#closeBut").click(function(){makeStart();});
+function makeStart() {
+  $(".fullDesc").hide();
+ $(".active").addClass("notActive").find(".slide").removeAttr('style').find("h1").removeAttr('style');$(".active").removeClass("active").find("h2.shortDesc").removeAttr('style');
+  //$(".block").css("transition","all 0s ease 0s");
+ $(".block.mid").css({"position":"static","width":"250px","height":"150px","display":"inline-block"});
+ $(".block.big").css({"position":"static","width":"504px","height":"304px","display":"inline-block"});
+  $("#closeBut").css("display","none");
+  $(".block").show();
+};
+
+    
+});</script>
+<link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+<div id="dboard">
+  <div class="block mid">
+    <div class="slide">
+      <h1>Cubes</h1>
+      <hr noshade color="#fff" size="1px" width="75%">
+      <h2 class="shortDesc">short descriprion</h2>
+      <h2 class="fullDesc">TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 
+      TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 TEXT1 </h2>
+    </div> 
+  </div>
+  <div class="block mid">
+    <div class="slide">
+      <h1>Something</h1>
+      <hr noshade color="#fff" size="1px" width="75%">
+      <h2 class="shortDesc">short descriprion</h2>
+      <h2 class="fullDesc">TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 
+      TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 TEXT2 </h2>
+    </div> 
+  </div>
+  <div class="block mid">
+    <div class="slide">
+      <h1>Flowers</h1>
+      <hr noshade color="#fff" size="1px" width="75%">
+      <h2 class="shortDesc">short descriprion</h2>
+      <h2 class="fullDesc">TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 
+      TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 TEXT3 </h2>
+    </div> 
+  </div>
+  <div class="block mid">
+    <div class="slide">
+      <h1>Triangles</h1>
+      <hr noshade color="#fff" size="1px" width="75%">
+      <h2 class="shortDesc">short descriprion</h2>
+      <h2 class="fullDesc">TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 
+      TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 TEXT4 </h2>
+    </div>     
+  </div>
+  <div class="block big">
+    <div class="slide">
+      <h1>Rose</h1>
+      <hr noshade color="#fff" size="1px" width="75%">
+      <h2 class="shortDesc">short descriprion</h2>
+      <h2 class="fullDesc">TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 
+      TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 TEXT5 </h2>
+    </div>     
+  </div>
+  <div class="block big">
+    <div class="slide">
+      <h1>Texture</h1>
+      <hr noshade color="#fff" size="1px" width="75%">
+      <h2 class="shortDesc">short descriprion</h2>
+      <h2 class="fullDesc">TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 
+      TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 TEXT6 </h2>
+    </div>     
+  </div>
+  <div id="closeBut"><h2>+</h2></div>
+</div>
+</body>
+</html>
